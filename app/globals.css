@@ -1,10 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,14 +27,102 @@
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+/* styles.css */
+
+/* Default (Mobile-first design) */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.logo {
+  margin-top: 1rem;
+}
+
+.main-content {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+/* Email subscription styles */
+.email-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.email-container input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0.5rem;
+}
+
+.email-container a {
+  background-color: #582B0E;
+  color: white;
+  padding: 12px;
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Desktop/Larger Screens */
+@media (min-width: 1024px) {
+  .logo {
+    position: absolute;
+    top: 10%;
+    transform: translateX(-50%);
+    left: 50%;
+  }
+
+  .main-content {
+    margin-top: 5rem;
+  }
+
+  .email-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .email-container input {
+    border-radius: 8px 0 0 8px;
+    margin-bottom: 0;
+  }
+
+  .email-container a {
+    border-radius: 0 8px 8px 0;
+    width: auto;
+  }
+
+  /* Adjust illustrations */
+  .left-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .right-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .top-right-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 70%;
+    width: 300px;
+    overflow: hidden;
   }
 }
